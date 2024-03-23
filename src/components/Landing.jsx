@@ -1,5 +1,58 @@
 const Landing = () => {
-    return <div className="w-full h-[200vh]">Landing</div>;
+    return (
+        <div className="relative w-full sm:h-[250vh] h-[150vh]">
+            <div className="picture w-full h-full">
+                <img
+                    className="w-full h-full object-cover"
+                    src="https://a.storyblok.com/f/133769/1920x2716/5c24d6b467/exo-ape-hero-1.jpg/m/1920x2716/filters:format(jpeg):quality(70)"
+                    alt=""
+                />
+            </div>
+            <div className="w-full absolute top-0">
+                <div className=" text max-w-2xl h-full mx-auto sm:mx-36 px-5 sm:px-20 text-white">
+                    <div className="para mt-[14rem] sm:mt-[30rem]">
+                        <p className="text-md sm:text-2xl">
+                            Global digital design studio partnering
+                        </p>
+                        <p className="text-md sm:text-2xl">
+                            with brands and businesses that create
+                        </p>
+                        <p className="text-md sm:text-2xl">
+                            exceptional experiences where people
+                        </p>
+                        <p className="text-md sm:text-2xl">
+                            live, work, and unwind.
+                        </p>
+                    </div>
+                    <div className="headings mt-14 sm:mt-10">
+                        <h1 className="text-5xl sm:text-[13rem]  tracking-tighter leading-none">
+                            Digital
+                        </h1>
+                        <h1 className="text-5xl sm:text-[13rem]  tracking-tighter leading-none">
+                            Design
+                        </h1>
+                        <h1 className="text-5xl sm:text-[13rem]  tracking-tighter leading-none">
+                            Experience
+                        </h1>
+                    </div>
+                    <div className="para2 sm:w-50 mt-40 sm:mt-[20rem] ">
+                        <p className="sm:text-xl">
+                            We help experience-driven companies thrive by making
+                            their audience feel the refined intricacies of their
+                            brand and product in the digital space.
+                            Unforgettable journeys start with a click.
+                        </p>
+                        <a
+                            className="sm:text-xl sm:border-b-[1px] border-b-[.3px] border-zinc-100 pb-1 mt-6 inline-block"
+                            href="#"
+                        >
+                            The Studio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Landing;
