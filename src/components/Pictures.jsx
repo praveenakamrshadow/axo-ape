@@ -1,15 +1,15 @@
 function Pictures() {
     return (
-        <div className="w-full h-[70vh] bg-white flex items-center justify-center overflow-hidden">
-            <div className="w-[40%] h-1/2 relative">
-                <div className="absolute w-20 h-[7rem] -right-[45%] top-6 ">
+        <div className="w-full h-[70vh] sm:h-[100vh] bg-white flex items-center justify-center overflow-hidden">
+            <div className="w-[40%] sm:w-[20%] sm:h-[90%] h-1/2 relative">
+                <div className="absolute w-20 sm:w-40 sm:h-[15rem] h-[7rem] -right-[45%] top-6 ">
                     <img
                         className="object-cover w-full h-full"
                         src="https://a.storyblok.com/f/133769/348x494/21becfd449/home-news-3.jpg/m/550x781/filters:format(webp):quality(70)"
                         alt=""
                     />
                 </div>
-                <div className="absolute w-[8rem] aspect-video -left-[70%] top-[25%]">
+                <div className="absolute w-[8rem] sm:w-[20rem] aspect-video -left-[70%] sm:-left-2/3 top-[25%]">
                     <video
                         autoPlay
                         loop
@@ -18,14 +18,14 @@ function Pictures() {
                         src="https://a.storyblok.com/f/133769/x/9c433c7aac/home-news-diesel-be-a-follower.mp4"
                     ></video>
                 </div>
-                <div className="absolute w-[10rem] aspect-video -left-[70%] -bottom-14">
+                <div className="absolute w-[10rem] sm:w-[17rem] aspect-video -left-[70%] -bottom-14">
                     <img
                         className="w-full h-full object-cover"
                         src="https://a.storyblok.com/f/133769/758x508/8a1ff60d00/home-news-4.jpg/m/550x369/filters:format(webp):quality(70)"
                         alt=""
                     />
                 </div>
-                <div className="absolute w-[8rem]  aspect-square -right-[70%] -bottom-[40%]">
+                <div className="absolute w-[8rem] sm:w-[50%] aspect-square -right-[70%] sm:-right-[30%] -bottom-[37%] sm:-bottom-[10%]">
                     <video
                         autoPlay
                         loop

@@ -1,10 +1,17 @@
 import { IoMdMenu } from 'react-icons/io';
+import { motion } from 'framer-motion';
+import { Power4 } from 'gsap';
 
 const Navbar = () => {
     return (
         <div className="w-full fixed z-[999]">
             <div className=" max-w-screen-xl mx-auto px-5 py-5 sm:px-10 sm:py-10 flex items-center justify-between text-white">
-                <div className="logo">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ east: Power4.easeInOut, duration: 0.7 }}
+                    className="logo"
+                >
                     <svg
                         viewBox="0 0 95 25"
                         fill="none"
@@ -43,11 +50,21 @@ const Navbar = () => {
                             data-v-1932cced=""
                         ></path>
                     </svg>
-                </div>
-                <span className="sm:hidden">
+                </motion.div>
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ east: Power4.easeInOut, duration: 0.7 }}
+                    className="sm:hidden"
+                >
                     <IoMdMenu />
-                </span>
-                <div className="links hidden sm:flex gap-10 ">
+                </motion.span>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ east: Power4.easeInOut, duration: 0.7 }}
+                    className="links hidden sm:flex gap-10 "
+                >
                     {['Home', 'About', 'Pricing', 'Contact'].map(
                         (item, index) => (
                             <a key={index} className="text-md ">
@@ -55,7 +72,7 @@ const Navbar = () => {
                             </a>
                         )
                     )}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
