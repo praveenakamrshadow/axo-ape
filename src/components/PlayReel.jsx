@@ -1,7 +1,61 @@
+import { Power4, gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger separately
+
+import { useEffect, useRef } from 'react';
+
 function PlayReel() {
+    const parent = useRef(null);
+    const videoDiv = useRef(null);
+    const play = useRef(null);
+    const reel = useRef(null);
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: parent.current,
+                top: '0 0',
+                pin: true,
+                scrub: 1,
+            },
+        });
+        tl.to(
+            videoDiv.current,
+            {
+                width: '105%',
+                height: '105%',
+                ease: Power4,
+            },
+            'a'
+        );
+        tl.to(
+            play.current,
+            {
+                x: '100%',
+                scale: 1.5,
+                ease: Power4,
+            },
+            'a'
+        );
+        tl.to(
+            reel.current,
+            {
+                x: '-100%',
+                scale: 2,
+                ease: Power4,
+            },
+            'a'
+        );
+    }, []);
+
     return (
-        <div className="w-full h-screen overflow-hidden relative bg-black">
-            <div className="w-40 sm:w-96 aspect-video  overflow-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div
+            ref={parent}
+            className="w-full h-screen overflow-hidden relative bg-black"
+        >
+            <div
+                ref={videoDiv}
+                className="w-40 sm:w-96 aspect-video  overflow-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
                 <video
                     autoPlay
                     muted
@@ -28,8 +82,12 @@ function PlayReel() {
                     <h3 className="text-sm">Work in motion</h3>
                 </div>
                 <h1 className="w-full flex justify-center sm:gap-96 gap-20">
-                    <div className="text-6xl  sm:text:8xl">Play</div>
-                    <div className="text-6xl  sm:text:8xl">Reel</div>
+                    <div ref={play} className="text-6xl  sm:text:8xl">
+                        Play
+                    </div>
+                    <div ref={reel} className="text-6xl  sm:text:8xl">
+                        Reel
+                    </div>
                 </h1>
                 <p className="text-center px-10 text-xs">
                     Our work is best experienced in motion. Don’t forget to put
