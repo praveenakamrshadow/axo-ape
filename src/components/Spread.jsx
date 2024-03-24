@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 function Spread() {
     return (
         <div className="w-full bg-white py-20">
@@ -19,11 +21,35 @@ function Spread() {
                     <h1>In the media</h1>
                 </div>
                 <div className="text mt-10 text-center">
-                    <h1 className="capitalize text-6xl sm:text-10xl tracking-tighter">
-                        Spread
+                    <h1 className="capitalize text-6xl sm:text-10xl tracking-tighter overflow-hidden sm:py-2">
+                        <motion.span
+                            initial={{ rotate: 90, y: '40%', opacity: 0 }}
+                            whileInView={{ rotate: 0, y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                ease: [0.22, 1, 0.36, 1],
+                                duration: 0.8,
+                                delay: 0.1,
+                            }}
+                            className="inline-block origin-left "
+                        >
+                            Spread
+                        </motion.span>
                     </h1>
-                    <h1 className="capitalize text-6xl sm:text-10xl tracking-tighter">
-                        the news
+                    <h1 className="capitalize text-6xl sm:text-10xl tracking-tighter overflow-hidden">
+                        <motion.span
+                            initial={{ rotate: 90, y: '40%', opacity: 0 }}
+                            whileInView={{ rotate: 0, y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                ease: [0.22, 1, 0.36, 1],
+                                duration: 0.8,
+                                delay: 0.1,
+                            }}
+                            className="inline-block origin-left "
+                        >
+                            the news
+                        </motion.span>
                     </h1>
                     <p className="w-2/3 sm:w-1/3 mx-auto mt-5 sm:mt-10 sm:text-xl text-md leading-2">
                         Find out more about our work on these leading design and
