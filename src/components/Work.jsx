@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Work() {
     const [elems, setElems] = useState([
@@ -47,8 +48,20 @@ function Work() {
                     </svg>
                     <h3 className="capitalize">featured projects</h3>
                 </div>
-                <h1 className="text-5xl sm:text-[10rem] sm:leading-none sm:tracking-tighter  my-4">
-                    Work
+                <h1 className="text-5xl sm:text-[10rem] sm:leading-none sm:tracking-tighter overflow-hidden my-4">
+                    <motion.span
+                        initial={{ rotate: 90, y: '40%', opacity: 0 }}
+                        whileInView={{ rotate: 0, y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            ease: [0.22, 1, 0.36, 1],
+                            duration: 0.8,
+                            delay: 0.1,
+                        }}
+                        className="inline-block origin-left "
+                    >
+                        Work
+                    </motion.span>
                 </h1>
                 <p className="mt-6 leading-2 text-md">
                     Highlights of cases that we passionately built with
@@ -61,8 +74,17 @@ function Work() {
                             className="elem w-full sm:w-[48%] mt-10"
                         >
                             <div className="video h-[104vw] sm:h-[50vw] gap-5 relative overflow-hidden">
-                                <img
-                                    className="w-full sm:block h-full object-cover"
+                                <motion.img
+                                    initial={{ opacity: 1 }}
+                                    whileHover={{ opacity: 0 }}
+                                    transition={{
+                                        ease: [0.22, 1, 0.36, 1],
+                                        duration: 0.8,
+                                        delay: 0.1,
+                                    }}
+                                    data-scroll
+                                    data-scroll-speed="-.5"
+                                    className="hidden sm:absolute sm:z-[2] sm:top-0 sm:left-0 w-full sm:block h-full object-cover"
                                     src={item.image}
                                     alt=""
                                 />
@@ -70,7 +92,7 @@ function Work() {
                                     autoPlay
                                     muted
                                     loop
-                                    className="block sm:hidden w-full h-full scale-[1.3] absolute center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                    className="block z-[1] w-full h-full scale-[1.3] absolute center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                                     src={item.video}
                                 ></video>
                             </div>

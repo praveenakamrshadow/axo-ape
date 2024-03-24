@@ -31,6 +31,7 @@ const Landing = () => {
                                         y: '100%',
                                         opacity: 0,
                                     }}
+                                    viewport={{ once: true }}
                                     animate={{ rotate: 0, y: '0', opacity: 1 }}
                                     transition={{
                                         ease: [0.22, 1, 0.36, 1],
@@ -62,6 +63,7 @@ const Landing = () => {
                                             y: '0',
                                             opacity: 1,
                                         }}
+                                        viewport={{ once: true }}
                                         transition={{
                                             ease: [0.22, 1, 0.36, 1],
                                             duration: 0.6,
